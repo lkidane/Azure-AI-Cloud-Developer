@@ -6,18 +6,21 @@ from openai import AzureOpenAI
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes and origins
 
+#take the secrets as environment variables
 # Read configuration from environment variables
 AZURE_OPENAI_ENDPOINT = os.environ.get("azure-api-url")
 AZURE_OPENAI_API_KEY = os.environ.get("azure-api-key")
 AZURE_OPENAI_MODEL_NAME = os.environ.get("azure-model-name")
 AZURE_OPENAI_API_VERSION = os.environ.get("azure-api-version", "2024-12-01-preview")
 
+#create azure openai client
 client = AzureOpenAI(
     api_version=AZURE_OPENAI_API_VERSION,
     azure_endpoint=AZURE_OPENAI_ENDPOINT,
     api_key=AZURE_OPENAI_API_KEY,
 )
 
+#exposes a /chat endpoint
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
@@ -32,6 +35,7 @@ def chat():
         model=AZURE_OPENAI_MODEL_NAME,
     )
 
+   #json response from the model
     return jsonify({
         "model": response.model,
         "reply": response.choices[0].message.content

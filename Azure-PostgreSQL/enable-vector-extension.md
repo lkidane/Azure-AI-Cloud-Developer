@@ -87,6 +87,7 @@ The company has also introduced advanced analytics platforms to monitor energy p
 PetroTrans has also initiated pilot projects exploring alternative fuels and renewable energy integration. Despite these efforts, the company continues to face criticism for slow progress and reliance on traditional fossil fuel operations. Governance practices have improved, with enhanced ESG reporting and stakeholder communication. However, investors and regulators are increasingly demanding more aggressive action. PetroTrans aims to transition toward a more diversified energy portfolio over the next decade while balancing economic and environmental priorities.'
 );
 ```
+CREATE EXTENSION IF NOT EXIST vector;
 
 Create the Vector Table:
 ```sql

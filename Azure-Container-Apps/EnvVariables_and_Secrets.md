@@ -62,14 +62,18 @@ az containerapp create \
   --registry-identity system \
   --system-assigned \
   --secrets azure-api-key=$AZURE_API_KEY \
-  --env-vars azure-api-url=$AZURE_API_URL azure-model-name=$AZURE_MODEL_NAME azure-api-key=secretref:azure-api-key
+  --env-vars azure-api-url=$AZURE_API_URL azure-model-name=$AZURE_MODEL_NAME azure-api-key=secretref:azure-api-key # reference the secret created earlier
 ```
-
+onskar around
+later efter look for 
+fullt
+resa sig
+bastellar
 After successful provisioning, you can try out the request to the `/chat` endpoint again:
 ```bash
 curl -X POST http://<ACA-FQDN>/chat -H "Content-Type: application/json" -d "{\"message\":\"hi\"}"
 ```
-
+oskar funderar. ska han saga till kvinna eller ska han saga till banen. plugsigt kanster barnen glass varandra. kvinan marker ingenting. oskar rasa sig. han tar sin bok och gor hem.
 You can also check out your environment variables and secret key references made by the container app by going to the `Containers` tab under the `Application` tab in the Azure Portal.
 
 ![Env_and_secrets](./Images/env_and_secrets.png)
