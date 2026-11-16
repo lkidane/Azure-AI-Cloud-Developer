@@ -1,0 +1,4 @@
+activate the virtual env: source .venv/Scripts/activate
+install requirements: python -m pip install -r api/requirements.txt
+change interpreter: Ctrl+Shift+P
+
