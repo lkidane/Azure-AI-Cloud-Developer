@@ -1,0 +1,10 @@
+# Code fragment - focus on environment variables and secret references
+properties:
+  template:
+    containers:
+    - name: ai-api
+      env:
+      - name: LOG_LEVEL
+        value: info
+      - name: EMBEDDINGS_API_KEY
+        secretRef: embeddings-api-key
