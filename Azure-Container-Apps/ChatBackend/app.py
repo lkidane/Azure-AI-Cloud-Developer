@@ -45,5 +45,32 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
 
-from azure.identity import DefaultAzureCredential
-from azure.mgmt.appcontainers import ContainerAppsAPIClient   
+
+
+# from azure.identity import DefaultAzureCredential
+# from azure.mgmt.appcontainers import ContainerAppsAPIClient   
+
+# client = ContainerAppsAPIClient(DefaultAzureCredential(), subscription_id="id")
+# for env in client.managed_environments.list_by_resource_group("rg-aca-demo"):
+#     logs = env.app_logs_configuration.destnation if env.app_logs_configuration else None
+#     print(env.name, env.location, env.default_domain, "logs:", logs)
+#     for wp in env.workload_profiles or []:
+#         print("prfile:", wp.name, wp.workload_profile_type)
+
+
+
+# # pip install azure-identity azure-keyvault-secrets
+# import os
+# from azure.identity import DefaultAzureCredential
+# from azure.keyvault.secrets import SecretClient
+
+# # Option 1: read Key Vault directly. No client_id/secret/tenant in code.
+# client = SecretClient(vault_url="https://my-demo-kv.vault.azure.net/",
+#                       credential=DefaultAzureCredential())
+# db_password = client.get_secret("DatabasePassword").value
+
+# # Option 2: Container Apps injected it via secretref
+# db_password_env = os.environ["DATABASE_PASSWORD"]
+# log_level = os.getenv("LOG_LEVEL", "info")
+ 
+        
